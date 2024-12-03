@@ -39,4 +39,9 @@
   }
 
   fontPicker(FontSize, "md");
+
+  const enum NUMBER {
+    ONE = 1,
+    TWO = 2,
+  }
 }
