@@ -19,7 +19,8 @@
     
   | 목차 | 제목                       | 링크                                     |
   |------|----------------------------|------------------------------------------|
-  | 1.   | 기본 타입 정리             | [문서](https://github.com/GoJiMin/learning-typescript/blob/main/1-types/%EA%B8%B0%EB%B3%B8%ED%83%80%EC%9E%85.md) |
+  | 1.   | 기본 타입 정리             | [문서](https://github.com/GoJiMin/learning-typescript/blob/main/docs/1.%20%EA%B8%B0%EB%B3%B8%ED%83%80%EC%9E%85.md) , [예제](https://github.com/GoJiMin/learning-typescript/tree/main/1-types) |
+  | 2.   | 고급 타입 정리             | [문서](https://github.com/GoJiMin/learning-typescript/blob/main/docs/2.%20%EA%B3%A0%EA%B8%89%ED%83%80%EC%9E%85.md) , [예제](https://github.com/GoJiMin/learning-typescript/tree/main/2-advanced-types) |
   </div>
     
   </div>
