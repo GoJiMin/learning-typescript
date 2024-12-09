@@ -11,9 +11,15 @@
     order(menu: TMenuList): ICoffee;
   }
 
+  interface ICommercialCoffeeMachine {
+    order(menu: TMenuList): ICoffee;
+    refill(coffeeBean: number): void;
+    clean(): void;
+  }
+
   type TMenuList = "Americano" | "Latte" | "VanilaLatte";
 
-  class CoffeeMachine implements ICoffeeMachine {
+  class CoffeeMachine implements ICoffeeMachine, ICommercialCoffeeMachine {
     private static readonly BEANS_GRAM_PER_SHOT: number = 12;
     private static readonly Recipes: Record<TMenuList, ICoffee> = {
       Americano: {
@@ -84,17 +90,40 @@
 
       return this.makeCoffee(menu);
     }
+
+    clean() {
+      console.log("Cleaning the machine...");
+    }
   }
 
-  const coffeeMachine1: CoffeeMachine = CoffeeMachine.installCoffeeMachine(50);
+  class AmateurBarista {
+    constructor(private machine: ICoffeeMachine) {}
 
-  const coffee1 = coffeeMachine1.refill(50);
+    order(menu: TMenuList): ICoffee {
+      const coffee = this.machine.order(menu);
 
-  coffeeMachine1.refill(50);
+      return coffee;
+    }
+  }
 
-  const coffeeMachine2: ICoffeeMachine = CoffeeMachine.installCoffeeMachine(50);
+  class ProBarista {
+    constructor(private machine: ICommercialCoffeeMachine) {}
 
-  const coffee2 = coffeeMachine2.order("Americano");
+    order(menu: TMenuList): ICoffee {
+      const coffee = this.machine.order(menu);
 
-  // coffeeMachine2.refill(50) Error
+      this.machine.refill(24);
+      this.machine.clean();
+
+      return coffee;
+    }
+  }
+
+  const coffeeMachine = CoffeeMachine.installCoffeeMachine(500);
+
+  const amateur = new AmateurBarista(coffeeMachine);
+  const pro = new ProBarista(coffeeMachine);
+
+  console.log(amateur.order("Latte"));
+  console.log(pro.order("Americano"));
 }
