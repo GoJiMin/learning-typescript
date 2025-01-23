@@ -40,6 +40,14 @@
       </td>
     </tr>
     <tr>
+      <td>3.</td>
+      <td><strong>타입 확장하기 • 좁히기</strong></td>
+      <td>
+        <a href="https://github.com/GoJiMin/learning-typescript/blob/main/docs/3.%20%ED%83%80%EC%9E%85%20%ED%99%95%EC%9E%A5%ED%95%98%EA%B8%B0%E2%80%A2%EC%A2%81%ED%9E%88%EA%B8%B0.md">문서</a>, 
+        <a href="https://github.com/GoJiMin/learning-typescript/tree/main/3-type-guard-extends">예제</a>
+      </td>
+    </tr>
+    <tr>
       <td colspan="3" align="center"><strong>etc</strong></td>
     </tr>
     <tr>
@@ -52,3 +60,5 @@
     </tr>
   </table>
 </div>
+
+
